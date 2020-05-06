@@ -244,7 +244,7 @@ function startListen () {
     var schema = config.useSSL ? 'HTTPS' : 'HTTP'
     logger.info('%s Server listening at %s', schema, address)
     realtime.maintenance = false
-    if (config.path) fs.chmod(config.path, 0o777);
+    if (config.path) fs.chmodSync(config.path, 0o777);
   }
 
   // use unix domain socket if 'path' is specified
